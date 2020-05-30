@@ -40,7 +40,7 @@ println!("The value of x is: {}", x);
 
 ## 2.3 Variable Shadowing
 
-- An immutable variable can be shadowed by declaring a second variable with the same name as first
+- A variable can be shadowed by declaring a second variable with the same name as first
 - The second variable must be declared with a `let` keyword
 
 ```rust
@@ -48,4 +48,36 @@ let x = 25;
 println!("The value of x is: {}", x);
 let x = 75;
 println!("The value of x is: {}", x);
+```
+
+## 2.4 Difference between Shadowing and Mutable Variables
+
+- For shadowing variable must be reassigned with keyword `let`
+- Mutable variables must be reassigned with same datatype whereas in shadowing datatype can be changed
+
+### Throws error when Mutable variable is reassigned with different datatype
+
+```rust
+let _text = "The quick brown fox jumps over the lazy dog.";
+_text = _text.len();
+```
+
+```bash
+error[E0308]: mismatched types
+ --> 2_4-mutable-var-v-shawoding.rs:3:12
+  |
+3 |     text = text.len();
+  |            ^^^^^^^^^^ expected &str, found usize
+  |
+  = note: expected type `&str`
+             found type `usize`
+
+error: aborting due to previous error
+```
+
+### No error when variable is shadowed
+
+```rust
+let _text = "The quick brown fox jumps over the lazy dog.";
+let _text = _text.len();
 ```
