@@ -36,3 +36,16 @@ println!("The value of x is: {}", x);
 x = 75;
 println!("The value of x is: {}", x);
 ```
+
+
+## 2.3 Variable Shadowing
+
+- An immutable variable can be shadowed by declaring a second variable with the same name as first
+- The second variable must be declared with a `let` keyword
+
+```rust
+let x = 25;
+println!("The value of x is: {}", x);
+let x = 75;
+println!("The value of x is: {}", x);
+```
