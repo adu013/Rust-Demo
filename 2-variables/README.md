@@ -11,7 +11,7 @@ x = 75;
 println!("The value of x is: {}", x);
 ```
 
-```
+```bash
 error[E0384]: cannot assign twice to immutable variable `x`
  --> 2_1-immutable-variables.rs:4:5
   |
